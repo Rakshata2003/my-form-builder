@@ -42,7 +42,7 @@ export default function AppraisalForm() {
     };
 
     try {
-      const response = await fetch("https://your-backend.onrender.com/submit-review" {
+      const response = await fetch("https://your-backend.onrender.com/submit-review", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(reviewData),
