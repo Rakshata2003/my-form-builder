@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function AppraisalForm() {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",  // Added email field
     employeeId: "",
     teamwork: "",
     communication: "",
@@ -37,6 +38,7 @@ export default function AppraisalForm() {
 
     const reviewData = {
       name: formData.name,
+      email: formData.email,  // Added email here
       employeeId: formData.employeeId,
       categories: categories,
     };
@@ -74,6 +76,7 @@ export default function AppraisalForm() {
               <form onSubmit={handleSubmit}>
                 <InputField label="Employee Name" name="name" value={formData.name} handleChange={handleChange} />
                 <InputField label="Employee ID" name="employeeId" value={formData.employeeId} handleChange={handleChange} />
+                <InputField label="Email" name="email" value={formData.email} handleChange={handleChange} /> {/* Added email input */}
 
                 <SelectField
                   label="Teamwork"
@@ -147,6 +150,7 @@ export default function AppraisalForm() {
           <div className="list-group">
             <div className="list-group-item"><strong>Employee Name:</strong> {formData.name}</div>
             <div className="list-group-item"><strong>Employee ID:</strong> {formData.employeeId}</div>
+            <div className="list-group-item"><strong>Email:</strong> {formData.email}</div> {/* Displaying email */}
             {formData.teamwork && <div className="list-group-item"><strong>Teamwork:</strong> {formData.teamwork}</div>}
             {formData.communication && <div className="list-group-item"><strong>Communication:</strong> {formData.communication}</div>}
             {formData.punctuality && <div className="list-group-item"><strong>Punctuality:</strong> {formData.punctuality}</div>}
